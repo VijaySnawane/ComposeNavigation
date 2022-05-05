@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ComposeNavigation"
 include ':app'
+include ':mycomposesan'
+include ':flowerapp'

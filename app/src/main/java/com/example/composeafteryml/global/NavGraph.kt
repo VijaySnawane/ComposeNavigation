@@ -1,9 +1,14 @@
 package com.example.composeafteryml
 
+import android.util.Log
+import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
+import com.example.composeafteryml.global.Screen
 
 @Composable
 fun SetupNavGraph(navHostController: NavHostController) {
@@ -13,9 +18,12 @@ fun SetupNavGraph(navHostController: NavHostController) {
         {
             HomeScreen(navController = navHostController)
         }
-
-        composable(route = Screen.Detail.route)
+        composable(route = Screen.Detail.route, arguments = listOf(navArgument("id")
         {
+            type = NavType.IntType
+        }))
+        {
+            Log.i("****************", it.arguments?.getInt("id").toString())
             DetailsScreen(navController = navHostController)
         }
     }

@@ -13,12 +13,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.composeafteryml.global.Screen
 
 @Composable
 fun HomeScreen(navController: NavController) {
     Box(modifier = Modifier.fillMaxSize().background(androidx.compose.ui.graphics.Color.Red), contentAlignment = Alignment.Center)
     {
-        Text(modifier = Modifier.clickable { navController.navigate(route = Screen.Detail.route) } ,
+        Text(modifier = Modifier.clickable {
+            navController.navigate(route = "detail_screen/"+1)
+                                           } ,
             text = "Home",
             color = MaterialTheme.colors.primary,
             fontSize = 15.sp)
